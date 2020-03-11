@@ -44,10 +44,16 @@ while running:
                 points = 2500
             elif event.unicode == ',':
                 special_angle -= 0.1
+                if special_angle < 0:
+                    special_angle = 0
             elif event.unicode == '.':
                 special_angle += 0.1
+                if special_angle > 360:
+                    special_angle = 360
             elif event.unicode == '=':
                 special_angle = 137.5
+            elif event.unicode == 'p':
+                print("special angle:",special_angle)
     screen.fill((0,0,0))
     draw_spiral()
     rotating_angle += 0.01
