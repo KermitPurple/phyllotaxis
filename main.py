@@ -20,6 +20,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+    screen.fill((0,0,0))
     draw_spiral()
     rotating_angle += 0.001
     pygame.display.update()
