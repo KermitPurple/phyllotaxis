@@ -28,7 +28,8 @@ while running:
             if event.unicode == "+":
                 circle_size += 1
             elif event.unicode == "-":
-                circle_size -= 1
+                if circle_size > 1:
+                    circle_size -= 1
     screen.fill((0,0,0))
     draw_spiral()
     rotating_angle += 0.01
