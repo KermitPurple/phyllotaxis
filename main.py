@@ -10,10 +10,11 @@ rotating_angle = 0
 c = 10
 circle_size = 5
 points = 2300
+special_angle = 137.5
 
 def draw_spiral():
     for n in range(points):
-        theta = (n * 137.5 * 3.14159265)/180
+        theta = (n * special_angle * 3.14159265)/180
         theta += rotating_angle
         r = c * sqrt(n)
         point = (int(r * cos(theta))+int(size/2), int(r * sin(theta))+int(size/2))
@@ -41,6 +42,12 @@ while running:
                 c = 10
                 circle_size = 5
                 points = 2500
+            elif event.unicode == ',':
+                special_angle -= 0.2
+            elif event.unicode == '.':
+                special_angle += 0.2
+            else:
+                print(event.unicode)
     screen.fill((0,0,0))
     draw_spiral()
     rotating_angle += 0.01
