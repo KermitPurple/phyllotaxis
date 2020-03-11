@@ -46,8 +46,8 @@ while running:
                 special_angle -= 0.2
             elif event.unicode == '.':
                 special_angle += 0.2
-            else:
-                print(event.unicode)
+            elif event.unicode == '=':
+                special_angle = 137.5
     screen.fill((0,0,0))
     draw_spiral()
     rotating_angle += 0.01
