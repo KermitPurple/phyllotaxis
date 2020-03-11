@@ -7,13 +7,15 @@ pygame.display.init()
 size = 650
 screen = pygame.display.set_mode((size,size))
 rotating_angle = 0
-circle_size = 3
+c = 10
+circle_size = 5
+points = 2300
 
 def draw_spiral():
-    for n in range(2300):
+    for n in range(points):
         theta = (n * 137.5 * 3.14159265)/180
         theta += rotating_angle
-        r = 10 * sqrt(n)
+        r = c * sqrt(n)
         point = (int(r * cos(theta))+int(size/2), int(r * sin(theta))+int(size/2))
         color = pygame.Color(255,255,255)
         color.hsva = (n % 360, 100, 100)
@@ -31,6 +33,14 @@ while running:
             elif event.unicode == "-":
                 if circle_size > 1:
                     circle_size -= 1
+            elif event.unicode == '1':
+                c = 3
+                circle_size = 1
+                points = 15000
+            elif event.unicode == '2':
+                c = 10
+                circle_size = 5
+                points = 2500
     screen.fill((0,0,0))
     draw_spiral()
     rotating_angle += 0.01
