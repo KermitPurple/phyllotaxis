@@ -13,7 +13,9 @@ def draw_spiral():
         theta += rotating_angle
         r = 10 * sqrt(n)
         point = (int(r * cos(theta))+300, int(r * sin(theta))+300)
-        pygame.draw.circle(screen, (255,255,255), point, 3)
+        color = pygame.Color(255,255,255)
+        color.hsva = (n % 360, 100, 100)
+        pygame.draw.circle(screen, color, point, 3)
 
 running = True
 while running:
