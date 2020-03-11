@@ -43,9 +43,9 @@ while running:
                 circle_size = 5
                 points = 2500
             elif event.unicode == ',':
-                special_angle -= 0.2
+                special_angle -= 0.1
             elif event.unicode == '.':
-                special_angle += 0.2
+                special_angle += 0.1
             elif event.unicode == '=':
                 special_angle = 137.5
     screen.fill((0,0,0))
