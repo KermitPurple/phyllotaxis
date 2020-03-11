@@ -19,6 +19,7 @@ def draw_spiral():
         pygame.draw.circle(screen, color, point, circle_size)
 
 running = True
+pygame.key.set_repeat(80)
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
