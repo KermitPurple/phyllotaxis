@@ -50,6 +50,14 @@ while running:
                 special_angle += 0.1
                 if special_angle > 360:
                     special_angle = 360
+            elif event.unicode == 'k':
+                special_angle -= 0.5
+                if special_angle < 0:
+                    special_angle = 0
+            elif event.unicode == 'l':
+                special_angle += 0.5
+                if special_angle > 360:
+                    special_angle = 360
             elif event.unicode == '=':
                 special_angle = 137.5
             elif event.unicode == 'p':
